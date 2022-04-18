@@ -1,0 +1,25 @@
+functions:
+.help - to show functions you can use.
+.schema - to show the created table with entities and data type.
+.dump - to show what you already do in your database.
+.quit - to exit from database.
+
+statements:
+CREATE TABLE nameOfTable(variable1 datatype, variable2 datatype ...); - to create a table.
+CREATE TABLE IF NOT EXISTS nameOfTable(variable datatype); - to create table if not existed.
+INSERT INTO nameOfTable VALUES(value1, value2, value3 ...); - to add rows or record to the table.
+UPDATE nameOfTable SET variable = newValue WHERE variable2 = value; - update specific records.
+SELECT variable1, variable2 FROM nameOfTable; - to show specific the records.
+SELECT * FROM nameOfTable; - to show all the records
+SELECT * FROM nameOfTable WHERE variable LIKE "%starting value%"; - to show all records that stars from the value.
+DELETE FROM nameOfTable WHERE variable1=value1; - to delete specific records.
+DELETE FROM nameOfTable; - to delete all the records from the table
+DROP TABLE nameOfTable; - to delete a table
+DROP TABLE IF EXISTS nameOfTable - to delete table if existed.
+
+relationship:
+pragma foreign_keys=ON; - to allow foreign keys relationship
+CREATE TABLE firstTable(firstVariable datatype unique); - to create a primary key/unique entity
+CREATE TABLE secondTable(secondVariable sameDatatype references firstTable(firstVariable)) - to create a foreign key from first table
+
+SELECT * FROM firstTable, secondTable WHERE firstTable.firstVariable = secondTable.secondVariable; - to show all the records from the relation.
